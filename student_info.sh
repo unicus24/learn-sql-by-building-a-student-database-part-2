@@ -22,9 +22,9 @@ echo -e "\nFirst name, last name, and GPA of students who have not selected a ma
 echo "$($PSQL "SELECT first_name, last_name, gpa FROM students WHERE major_id IS NULL AND (first_name LIKE 'D%' OR gpa > 3.0)")"
 
 echo -e "\nCourse name of the first five courses, in reverse alphabetical order, that have an 'e' as the second letter or end with an 's':"
-echo "$($PSQL "SELECT course FROM courses WHERE course LIKE '_e%' OR course LIKE '%s' ORDER BY course DESC LIMIT 5;")"
+echo "$($PSQL "SELECT course FROM courses WHERE course LIKE '_e%' OR course LIKE '%s' ORDER BY course DESC LIMIT 5")"
 
 echo -e "\nAverage GPA of all students rounded to two decimal places:"
-echo "$($PSQL "SELECT ROUND(AVG(gpa), 2) FROM students;")"
+echo "$($PSQL "SELECT ROUND(AVG(gpa), 2) FROM students")"
 
 echo -e "\nMajor ID, total number of students in a column named 'number_of_students', and average GPA rounded to two decimal places in a column name 'average_gpa', for each major ID in the students table having a student count greater than 1:"
